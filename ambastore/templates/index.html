@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}ambaSTORE — iPhone Pro &amp; Pro Max{% endblock %}
+{% block page %}home{% endblock %}
+{% block content %}
+<main>
+  <section class="hero">
+    <div class="container">
+      <h1>iPhone Pro &amp; Pro Max.<br>Pilih sesuai gayamu.</h1>
+      <p>Koleksi iPhone 17, 16, dan 15. Pilih warna, RAM, dan penyimpanan yang kamu mau.</p>
+      <a class="btn dark" href="#produk">Lihat Produk</a>
+    </div>
+  </section>
+  <section class="container section" id="produk">
+    <div class="section-head">
+      <h2>Semua Produk <small class="muted" id="count" style="font-size:14px;font-weight:400"></small></h2>
+      <div class="filters">
+        <input id="fq" type="search" placeholder="Cari produk / warna…">
+        <select id="fseries"><option value="">Semua seri</option><option value="17">iPhone 17</option><option value="16">iPhone 16</option><option value="15">iPhone 15</option></select>
+        <select id="fsort"><option value="new">Terbaru</option><option value="low">Harga terendah</option><option value="high">Harga tertinggi</option><option value="rating">Rating tertinggi</option></select>
+      </div>
+    </div>
+    <div class="grid" id="grid"></div>
+  </section>
+</main>
+{% endblock %}
+{% block scripts %}<script src="{{ url_for('static', filename='js/home.js') }}"></script>{% endblock %}

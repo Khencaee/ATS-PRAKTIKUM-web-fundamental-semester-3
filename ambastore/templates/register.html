@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}Buat Akun — ambaSTORE{% endblock %}
+{% block css %}<link rel="stylesheet" href="{{ url_for('static', filename='css/auth.css') }}">{% endblock %}
+{% block bodyclass %}auth{% endblock %}
+{% block page %}register{% endblock %}
+{% block content %}
+<main class="auth-wrap">
+  <div class="auth-title"><h1>Buat Akun<span>ambaSTORE Baru Anda</span></h1></div>
+  <form class="auth-form" id="registerForm" novalidate>
+    <input type="text" name="name" placeholder="Nama lengkap" autocomplete="name" required>
+    <input type="email" name="email" placeholder="Email" autocomplete="email" required>
+    <input type="tel" name="phone" placeholder="No. telepon" autocomplete="tel">
+    <input type="password" name="password" placeholder="Password (min. 6 karakter)" autocomplete="new-password" required>
+    <input type="password" name="confirm" placeholder="Ulangi password" autocomplete="new-password" required>
+    <div class="auth-err" id="err"></div>
+    <button class="auth-btn solid" type="submit">Create Account</button>
+    <a class="auth-btn" href="{{ url_for('login') }}">Sudah punya akun? Login</a>
+  </form>
+</main>
+{% endblock %}
+{% block footer %}{% endblock %}
+{% block scripts %}<script src="{{ url_for('static', filename='js/auth.js') }}"></script>{% endblock %}

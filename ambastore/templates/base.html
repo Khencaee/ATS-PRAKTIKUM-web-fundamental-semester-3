@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>{% block title %}ambaSTORE{% endblock %}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+  {% block css %}<link rel="stylesheet" href="{{ url_for('static', filename='css/shop.css') }}">{% endblock %}
+</head>
+<body class="{% block bodyclass %}{% endblock %}" data-page="{% block page %}{% endblock %}">
+  <header id="site-header"></header>
+  {% block content %}{% endblock %}
+  {% block footer %}<footer id="site-footer"></footer>{% endblock %}
+  <script src="{{ url_for('static', filename='js/api.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/ui.js') }}"></script>
+  {% block scripts %}{% endblock %}
+</body>
+</html>

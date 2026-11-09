@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>{% block title %}Admin{% endblock %} — Admin ambaSTORE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/admin.css') }}">
+</head>
+<body class="admin" data-page="admin-{% block page %}{% endblock %}">
+  <div class="admin-layout">
+    <aside id="admin-side"></aside>
+    <main class="admin-main">
+      <header id="admin-top"></header>
+      <section id="content"></section>
+    </main>
+  </div>
+  <script src="{{ url_for('static', filename='js/api.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/ui.js') }}"></script>
+  {% block scripts %}{% endblock %}
+</body>
+</html>

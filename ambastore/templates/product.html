@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}Detail Produk — ambaSTORE{% endblock %}
+{% block page %}product{% endblock %}
+{% block content %}
+<main class="container">
+  <div class="crumbs"><a href="{{ url_for('home') }}">Beranda</a> / <span id="crumb">Produk</span></div>
+  <div id="pdp"></div>
+  <section class="reviews" id="reviews"></section>
+</main>
+{% endblock %}
+{% block scripts %}<script src="{{ url_for('static', filename='js/product.js') }}"></script>{% endblock %}

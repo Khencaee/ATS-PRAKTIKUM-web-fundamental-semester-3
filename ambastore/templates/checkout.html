@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}Checkout — ambaSTORE{% endblock %}
+{% block page %}checkout{% endblock %}
+{% block content %}
+<main class="container">
+  <h1 class="page-title">Checkout</h1>
+  <form id="checkout" class="cart-layout">
+    <div>
+      <div class="box"><h3>Alamat Pengiriman</h3>
+        <div class="grid-2">
+          <div class="field"><label>Nama penerima</label><input name="receiver" required></div>
+          <div class="field"><label>No. telepon</label><input name="phone" type="tel" required></div>
+        </div>
+        <div class="field"><label>Alamat lengkap</label><textarea name="address" required placeholder="Jalan, nomor, kota, kode pos"></textarea></div>
+      </div>
+      <div class="box"><h3>Metode Pembayaran — Transfer Bank</h3><div id="banks"></div>
+        <p class="muted" style="font-size:13px">Setelah pesanan dibuat, upload bukti transfer di halaman Pesanan Saya. Admin akan memverifikasi pembayaranmu.</p></div>
+    </div>
+    <aside class="summary"><h3>Pesanan Anda</h3><div id="sumItems"></div>
+      <div class="sum-row"><span>Ongkos kirim</span><span>Gratis</span></div>
+      <div class="sum-row total"><span>Total</span><span id="sumTotal"></span></div>
+      <div class="form-err" id="err"></div>
+      <button class="btn dark block" id="placeBtn">Buat Pesanan</button></aside>
+  </form>
+</main>
+{% endblock %}
+{% block scripts %}<script src="{{ url_for('static', filename='js/checkout.js') }}"></script>{% endblock %}

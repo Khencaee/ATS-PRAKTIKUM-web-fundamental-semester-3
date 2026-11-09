@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}Keranjang — ambaSTORE{% endblock %}
+{% block page %}cart{% endblock %}
+{% block content %}
+<main class="container">
+  <h1 class="page-title">Keranjang Belanja</h1>
+  <div id="cart"></div>
+</main>
+{% endblock %}
+{% block scripts %}<script src="{{ url_for('static', filename='js/cart.js') }}"></script>{% endblock %}

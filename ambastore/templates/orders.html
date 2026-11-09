@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}Pesanan Saya — ambaSTORE{% endblock %}
+{% block page %}orders{% endblock %}
+{% block content %}
+<main class="container">
+  <h1 class="page-title">Pesanan Saya</h1>
+  <div id="orders"></div>
+</main>
+{% endblock %}
+{% block scripts %}<script src="{{ url_for('static', filename='js/orders.js') }}"></script>{% endblock %}
